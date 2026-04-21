@@ -1,13 +1,14 @@
 // import CustomSVG from "./components/CustomSVG";
 // import MenuBar from "./components/MenuBar";
 // import WavyUnderline from "./components/WavyUnderline";
-import MacFlip from "./components/MacFlip";
+// import MacFlip from "./components/MannuPaaji/MacFlip";
+import ScaleLines from "./components/MannuPaaji/ScaleLines";
 
 function App() {
 
   return (
     <>
-      <main className="h-screen w-screen bg-purple-900 flex items-center justify-center">
+      <main className="h-screen w-screen bg-black/60 flex items-center justify-center">
 
         {/* Animated Menu Bar */}
           {/* <MenuBar /> */}
@@ -19,7 +20,10 @@ function App() {
           {/* <CustomSVG/> */}
 
         {/* mac flip animation */}
-          <MacFlip/>
+          {/* <MacFlip/> */}
+        
+        {/* scale lines */}
+        <ScaleLines/>
 
       </main>
     </>
