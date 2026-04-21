@@ -23,7 +23,7 @@ export default function ScaleLines() {
                     <Line className={cn("mask-t-from-10% absolute inset-x-0 bottom-0")} />
                     
                     <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-neutral-900 mb-6">
-                        Shani Tiwari
+                        @ShaniDevelops
                     </h1>
                     <a href="https://x.com/mannupaaji" className="text-2xl font-bold tracking-tight text-neutral-900 mb-6">
                         @MannuPaaji
