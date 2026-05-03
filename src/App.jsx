@@ -2,6 +2,7 @@
 // import MenuBar from "./components/MenuBar";
 // import WavyUnderline from "./components/WavyUnderline";
 // import MacFlip from "./components/MannuPaaji/MacFlip";
+import GooeyEffect from "./components/MannuPaaji/GooeyEffect";
 import ScaleLines from "./components/MannuPaaji/ScaleLines";
 
 function App() {
@@ -23,7 +24,10 @@ function App() {
           {/* <MacFlip/> */}
         
         {/* scale lines */}
-        <ScaleLines/>
+        {/* <ScaleLines/> */}
+
+        {/* gooey effect */}
+        <GooeyEffect/>
 
       </main>
     </>
