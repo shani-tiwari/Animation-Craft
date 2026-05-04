@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 /**
  * @param name 
  */
-export default function MotionBtn({name}) {
+export default function MotionBtn({name = '@shani.develops'}) {
     
   return (
     <motion.button
