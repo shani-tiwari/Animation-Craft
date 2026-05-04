@@ -2,8 +2,9 @@
 // import MenuBar from "./components/MenuBar";
 // import WavyUnderline from "./components/WavyUnderline";
 // import MacFlip from "./components/MannuPaaji/MacFlip";
-import GooeyEffect from "./components/MannuPaaji/GooeyEffect";
-import ScaleLines from "./components/MannuPaaji/ScaleLines";
+// import GooeyEffect from "./components/MannuPaaji/GooeyEffect";
+// import ScaleLines from "./components/MannuPaaji/ScaleLines";
+import MotionBtn from "./components/Motion-btn";
 
 function App() {
 
@@ -27,7 +28,10 @@ function App() {
         {/* <ScaleLines/> */}
 
         {/* gooey effect */}
-        <GooeyEffect/>
+        {/* <GooeyEffect/> */}
+
+        <MotionBtn name="Instagram - "/>
+        <MotionBtn name="Shani.Develops"/>
 
       </main>
     </>
