@@ -4,13 +4,14 @@
 // import MacFlip from "./components/MannuPaaji/MacFlip";
 // import GooeyEffect from "./components/MannuPaaji/GooeyEffect";
 // import ScaleLines from "./components/MannuPaaji/ScaleLines";
+import MagneticButton from "./components/MannuPaaji/MagneticButton";
 import MotionBtn from "./components/Motion-btn";
 
 function App() {
 
   return (
     <>
-      <main className="h-screen w-screen bg-black/60 flex items-center justify-center">
+      <main className="h-screen w-screen bg-slate-900 flex items-center justify-center">
 
         {/* Animated Menu Bar */}
           {/* <MenuBar /> */}
@@ -30,8 +31,10 @@ function App() {
         {/* gooey effect */}
         {/* <GooeyEffect/> */}
 
-        <MotionBtn name="Instagram - "/>
-        <MotionBtn name="Shani.Develops"/>
+        {/* <MotionBtn name="Instagram - "/> */}
+        {/* <MotionBtn name="Shani.Develops"/> */}
+
+        <MagneticButton text='Shani Develops'/>
 
       </main>
     </>
