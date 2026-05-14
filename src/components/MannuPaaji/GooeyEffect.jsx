@@ -6,7 +6,6 @@
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion"
 import { Search } from "lucide-react";
-import { svg } from "motion/react-client";
 import { useEffect, useRef, useState } from "react"
 
 export default function GooeyEffect() {
