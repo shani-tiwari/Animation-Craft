@@ -33,7 +33,7 @@ hcj-components
 AnimatedText.jsx
 Card.jsx
 CustomSVG.jsx
-MenuBar.jsx
+# MenuBar.jsx
 Btn-Hover.jsx
 Nav_Hover.jsx
 Success_AniSeqBtn.jsx
