@@ -1,5 +1,6 @@
 // import CustomSVG from "./components/CustomSVG";
 // import Card from "./components/Card";
+import Carousel from "./components/MannuPaaji/Carousel";
 import MenuBar from "./components/MenuBar";
 // import WavyUnderline from "./components/WavyUnderline";
 // import MacFlip from "./components/MannuPaaji/MacFlip";
@@ -14,31 +15,29 @@ function App() {
 
   return (
     <>
-      <main className="h-screen w-screen relative bg-slate-900 flex items-center justify-center">
+      <main className="h-screen w-screen min-h-svh relative bg-slate-900 flex items-center justify-center">
 
-        {/* Animated Menu Bar */}
         {/* <ButtonHover /> */}
-          <MenuBar />
-          {/* <AnimatedText /> 💚 */}
 
-        {/* wavy text underline animation */}
-          {/* <WavyUnderline /> */}
+        {/* <MenuBar /> */}
 
-        {/* custom styled animated svg */}
-          {/* <CustomSVG/> */}
+        {/* <AnimatedText /> 💚 */}
 
-        {/* mac flip animation */}
-          {/* <MacFlip/> */}
+        {/* <WavyUnderline /> */}
+
+        {/* <CustomSVG/> */}
+
+        {/* <MacFlip/> */}
         
-        {/* scale lines */}
         {/* <ScaleLines/> */}
 
-        {/* gooey effect */}
         {/* <GooeyEffect/> */}
 
         {/* <MotionBtn name="Instagram - "/> */}
 
         {/* <MagneticButton text='Shani Develops'/> */}
+
+        <Carousel />
 
 
       </main>
