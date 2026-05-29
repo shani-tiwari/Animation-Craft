@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { cn } from "../lib/utils";
+import { cn } from "../../lib/utils";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "motion/react";
 
@@ -36,6 +36,7 @@ function MenuBar() {
             </button>
           </div>
 
+        {/* menu wrapper */}
           <motion.div
             initial={{ width: 0, height: 0, right: "24px", top: "24px" }}
             animate={{
@@ -46,8 +47,10 @@ function MenuBar() {
             }}
             transition={{
               duration: 0.4,
-              type: "tween",
-              ease: [0.1 , 0, 0.7, 1],
+              type: "spring",
+              stiffness: 100,
+              damping: 15
+              // ease: [0.1 , 0, 0.7, 1],
             }}
             style={{ transformOrigin: "top right" }}
             whileTap={{ scale: 0.99 }}
@@ -60,7 +63,7 @@ function MenuBar() {
               menu-bar absolute z-0 px-[24px] py-[12px] lg:px-[44px] lg:py-[22px] bg-green-500/20 rounded-3xl cursor-pointer `,
             )}
           >
-              <motion.div 
+            <motion.div 
               layout='position'
               initial={{opacity: 0 }}
               animate={{
@@ -73,15 +76,15 @@ function MenuBar() {
                 delay: 0.2
               }}
 
-              style={{ position: 'absolute', left: 16, top: 16 }} 
+              // style={{ position: 'absolute', left: 16, top: 16 }} /
               className={`absolute left-4 top-4 lg:px-4 pt-10 ${active && 'w-[90%]'}  `}
-              >
+            >
 
                 { ['Projects', 'About', 'Contact', 'Skills', 'Experience'].map((item, idx) => 
                   (
                     <AnimatePresence>
                       <motion.div 
-                      initial={{opacity: 0  }}
+                      initial={{opacity: 0}}
                       style={{ transformOrigin: "top" }}
                       animate={{
                         opacity: active ? 1 : 0,
@@ -90,8 +93,8 @@ function MenuBar() {
                       }}
                       exit={{
                         opacity: 0, 
-                        // scale: !active ? 0.2 : 1,
-                        y: 10
+                        scale: !active ? 0 : 1,
+                        // x: -100
                       }}
                       transition={{
                         duration: 0.2,
@@ -107,7 +110,7 @@ function MenuBar() {
                       </motion.div>  
                     </AnimatePresence>
                   )
-                )}
+                )};
 
               </motion.div>
 
