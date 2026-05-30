@@ -1,7 +1,7 @@
 // import CustomSVG from "./components/CustomSVG";
 // import Card from "./components/Card";
-import Carousel from "./components/MannuPaaji/Carousel";
-import MenuBar from "./components/mine/MenuBar";
+// import Carousel from "./components/MannuPaaji/Carousel";
+// import MenuBar from "./components/mine/MenuBar";
 // import WavyUnderline from "./components/WavyUnderline";
 // import MacFlip from "./components/MannuPaaji/MacFlip";
 // import GooeyEffect from "./components/MannuPaaji/GooeyEffect";
@@ -11,15 +11,17 @@ import MenuBar from "./components/mine/MenuBar";
 // import AnimatedText from "./components/AnimatedText";
 // import ButtonHover from "./components/3dBtn_bg";
 
+import DragCards from "./components/MannuPaaji/DragCards";
+
 function App() {
 
   return (
     <>
-      <main className="h-screen w-screen min-h-svh relative bg-slate-900 flex items-center justify-center">
+      <main className=" w-screen h-fit relative bg-slate-900 flex items-center justify-center">
 
         {/* <ButtonHover /> */}
 
-        <MenuBar />
+        {/* <MenuBar /> */}
 
         {/* <AnimatedText /> 💚 */}
 
@@ -38,6 +40,8 @@ function App() {
         {/* <MagneticButton text='Shani Develops'/> */}
 
         {/* <Carousel /> */}
+        
+        <DragCards />
 
 
       </main>
