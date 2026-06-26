@@ -56,7 +56,7 @@ const StackedCard = ({item,idx,total,onSendBack}) =>{
             style={{ zIndex: total - idx, rotate, x }}                  /* on top of each other */
             transition={stack_transition}
         >
-            <img
+            <img 
                 src={item.img}
                 alt={item.title}
                 /* drag - started working after `select, pointer` properties added on img */
