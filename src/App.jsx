@@ -12,12 +12,13 @@
 // import ButtonHover from "./components/3dBtn_bg";
 
 import DragCards from "./components/MannuPaaji/DragCards";
+import IconMorph from "./components/MannuPaaji/IconMorph";
 
 function App() {
 
   return (
     <>
-      <main className=" w-screen h-fit relative bg-slate-900 flex items-center justify-center">
+      <main className=" w-screen h-screen relative bg-slate-900 flex items-center justify-center">
 
         {/* <ButtonHover /> */}
 
@@ -41,7 +42,8 @@ function App() {
 
         {/* <Carousel /> */}
         
-        <DragCards />
+        {/* <DragCards /> */}
+        <IconMorph/>
 
 
       </main>
