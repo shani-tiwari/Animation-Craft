@@ -13,12 +13,13 @@
 
 import DragCards from "./components/MannuPaaji/DragCards";
 import IconMorph from "./components/MannuPaaji/IconMorph";
+import { ScrollText } from "./components/MannuPaaji/ScrollText";
 
 function App() {
 
   return (
     <>
-      <main className=" w-screen h-screen relative bg-slate-900 flex items-center justify-center">
+      <main className=" w-[98vw] h-fit relative bg-slate-900 flex items-center justify-center">
 
         {/* <ButtonHover /> */}
 
@@ -43,7 +44,8 @@ function App() {
         {/* <Carousel /> */}
         
         {/* <DragCards /> */}
-        <IconMorph/>
+        {/* <IconMorph/> */}
+        <ScrollText/>
 
 
       </main>
