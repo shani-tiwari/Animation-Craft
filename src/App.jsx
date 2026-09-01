@@ -6,7 +6,7 @@
 // import MacFlip from "./components/MannuPaaji/MacFlip";
 // import GooeyEffect from "./components/MannuPaaji/GooeyEffect";
 // import ScaleLines from "./components/MannuPaaji/ScaleLines";
-// import MagneticButton from "./components/MannuPaaji/MagneticButton";
+import MagneticButton from "./components/MannuPaaji/MagneticButton";
 // import MotionBtn from "./components/Motion-btn";
 // import AnimatedText from "./components/AnimatedText";
 // import ButtonHover from "./components/3dBtn_bg";
@@ -14,12 +14,13 @@
 import DragCards from "./components/MannuPaaji/DragCards";
 import IconMorph from "./components/MannuPaaji/IconMorph";
 import { ScrollText } from "./components/MannuPaaji/ScrollText";
+import Line from "./components/mine/svg/line";
 
 function App() {
 
   return (
     <>
-      <main className=" w-[98vw] h-fit relative bg-slate-900 flex items-center justify-center">
+      <main className=" w-screen h-screen relative bg-slate-900 flex items-center justify-center">
 
         {/* <ButtonHover /> */}
 
@@ -39,13 +40,15 @@ function App() {
 
         {/* <MotionBtn name="Instagram - "/> */}
 
-        {/* <MagneticButton text='Shani Develops'/> */}
+        {/* <MagneticButton children='Shani Develops'/> */}
 
         {/* <Carousel /> */}
         
         {/* <DragCards /> */}
         {/* <IconMorph/> */}
-        <ScrollText/>
+        {/* <ScrollText/> */}
+
+        <Line/>
 
 
       </main>

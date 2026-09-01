@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    </div>
+
+    <style>
+        .goo-wrap {
+            filter: url(#goo-text);
+            width: 200px;
+            height: 100px;
+            position: relative;
+            /* background: #000; */
+        }
+
+        .blob {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #6c5ce7;
+            /* animation: drift 2.5s ease-in-out infinite alternate; */
+        }
+
+        .blob2 {
+            right: 50px;
+            animation-delay: -1.2s;
+        }
+
+        @keyframes drift {
+            from { transform: translateX(0);}
+            to   { transform: translateX(80px);}
+        }
+        .heading{
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 60px;      
+        }
+    </style>
+</head>
+
+<body>
+    <div class="goo-wrap">
+        <!-- <div class="blob"></div>
+        <div class="blob blob2"></div> -->
+        
+        <!-- effect -->
+        <svg width="0" height="0">
+            <defs>
+                <filter id="goo">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                    <feColorMatrix in="blur" mode="matrix" values=
+                       "1 0 0 0 0
+                        0 1 0 0 0
+                        0 0 1 0 0
+                        0 0 0 18 -7" result="goo" />
+                    <feBlend in="SourceGraphic" in2="goo" />
+                </filter>
+            </defs>
+        </svg>
+        
+        <!-- Gooey Text -->
+        <svg width="0" height="0">
+            <defs>
+                <filter id="goo-text">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="0" result="blur" >
+                        <animate 
+                            attributeName="stdDeviation" 
+                            values="0;10;10;0;0" 
+                            dur="4s" 
+                            repeatCount="indefinite" 
+                        />
+                    </feGaussianBlur>
+                    <feColorMatrix in="blur" mode="matrix" values=
+                       "1 0 0 0 0
+                        0 1 0 0 0
+                        0 0 1 0 0
+                        0 0 0 18 -7" result="goo2" />
+                    <feComposite in="SourceGraphic" in2="goo2" operator="atop" />
+                </filter>
+            </defs>
+        </svg>
+        <h1 class="heading" style="filter: url(#goo-text);">Shani Tiwari</h1>
+
+    </div>
+</body>
+
+</html>

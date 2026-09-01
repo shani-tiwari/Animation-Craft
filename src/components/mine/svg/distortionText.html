@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG</title>
+  </head>
+  <body>
+    
+    <!-- distortion text -->
+    <svg width="0" height="0">
+      <defs>
+        <filter id="wavy" x="-20%" y="-20%" width="140%" height="140%">
+          <feTurbulence
+            type="fractalNoise"
+            numOctaves="2"
+            seed="3"
+            baseFrequency="0 0.02"
+            result="noise"
+          >
+            <animate
+              attributeName="baseFrequency"
+              dur="6s"
+              values="0 0.01; 0 0.4; 0 0.01"
+              repeatCount="indefinite"
+            />
+          </feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="17" />
+        </filter>
+      </defs>
+    </svg>
+
+    <h1 style="filter: url(#wavy); font-size: 60px">liquid text</h1>
+    
+  </body>
+</html>
