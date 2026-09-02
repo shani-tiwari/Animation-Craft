@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container } from "../container";
 import Image from "next/image";
+// eslint-disable-next-line no-unused-vars
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useState } from "react";
 
