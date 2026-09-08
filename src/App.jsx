@@ -1,4 +1,4 @@
-import PricingCard from "./online/PricingCard";
+import ReviewSlider from "./components/mine/ReviewSlider";
 
 
 
@@ -7,9 +7,8 @@ function App() {
 
   return (
     <>
-      <main className=" w-screen h-screen relative bg-slate-950 flex items-center justify-center gap-5">
-        <PricingCard/>
-        <PricingCard/>
+      <main className="w-screen min-h-screen bg-[#f4f5f7] flex items-center justify-center p-4 sm:p-8">
+        <ReviewSlider />
       </main>
     </>
   );
