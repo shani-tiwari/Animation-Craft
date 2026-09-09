@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -92,7 +92,6 @@ export default function ReviewSlider() {
         setCardWidth(cardRef.current.offsetWidth);
       }
     };
-
     updateDimensions();
     window.addEventListener("resize", updateDimensions);
     return () => window.removeEventListener("resize", updateDimensions);
@@ -107,14 +106,15 @@ export default function ReviewSlider() {
   };
 
   const isAtStart = activeIndex === 0;
-  const isAtEnd = activeIndex === REVIEWS.length - 2;
+  const isAtEnd = activeIndex === REVIEWS.length - 1;
+
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-10 select-none">
+    <div className="w-full max-w-6xl mx-auto sm:px-6 py-10 select-none">
       {/* Cards Viewport Container */}
       <div
         ref={containerRef}
-        className="w-full relative overflow-hidden  py-8 px-6 mask-fade-edges"
+        className="w-full relative overflow-hidden py-6 md:px-6 mask-fade-edges "
       >
         <motion.div
           className="flex gap-6 items-stretch"
@@ -138,18 +138,18 @@ export default function ReviewSlider() {
                 <motion.div
                     key={review.id}
                     ref={index === 0 ? cardRef : null}
-                    className="w-82.5 sm:w-97.5 md:w-110 shrink-0 flex flex-col justify-between bg-[#eceef0] rounded-3xl p-7 sm:p-8 md:p-9 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-black/4"
+                    className="w-full md:w-110 shrink-0 flex flex-col justify-between bg-[#eceef0] rounded-3xl p-7 sm:p-8 md:p-9 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-black/20"
                     animate={{
-                        scale: isExited ? 0.7 : isActive ? 1 : 0.95,
-                        opacity: isExited ? 0 : 1,
-                        y: isExited ? 10 : 0,
+                      scale: isExited ? 0.7 : isActive ? 1 : 0.95,
+                      opacity: isExited ? 0 : 1,
+                      y: isExited ? 10 : 0,
                     }}
                     transition={{
-                        duration: 0.5,
-                        ease: [0.25, 1, 0.25, 1],
+                      duration: 0.5,
+                      ease: [0.25, 1, 0.25, 1],
                     }}
                     style={{
-                        transformOrigin: "left center",
+                      transformOrigin: "left center",
                     }}
                 >
                     {/* Quote Icon & Content */}
