@@ -29,6 +29,8 @@ export default function Line () {
                     strokeLinecap="round"
                 />
             </svg>
+
+            
             <svg className="bg-white/2" width={600} height={600} viewBox="0 0 400 400" fill="none">
                 <path id='track'
                     d="M40, 200 C 10, 10 190, 190 190, 40"  
