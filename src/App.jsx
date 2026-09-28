@@ -1,4 +1,4 @@
-import NavHide from "./components/tom/NavHide";
+import DragCard from "./components/tom/DragCard";
 
 
 
@@ -10,7 +10,7 @@ function App() {
  return (
     <>
       <main className="w-full h-screen ">
-        <NavHide/>
+        <DragCard/>
       </main>
     </>
   );
