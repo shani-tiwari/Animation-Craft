@@ -1,4 +1,4 @@
-import NavBarSlide from "./components/tom/NavBarSlide";
+import HoverTilt from "./components/tom/HoverTilt";
 
 
 
@@ -9,8 +9,8 @@ import NavBarSlide from "./components/tom/NavBarSlide";
 function App() {
  return (
     <>
-      <main className="w-full min-h-screen bg-white  p-4">
-        <NavBarSlide/>
+      <main className="w-full min-h-screen bg-stone-500">
+        <HoverTilt/>
       </main>
     </>
   );
