@@ -1,1 +1,3 @@
-- 
+- framer doesn't understand if you add `trabslate` in tailwind - with it's '`x`' 
+    - so '`style`' tag helps with it to define custom in it 
+- `exit` animation need `AnimatePresence`
