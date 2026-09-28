@@ -1,4 +1,4 @@
-import HoverTilt from "./components/tom/HoverTilt";
+import NavHide from "./components/tom/NavHide";
 
 
 
@@ -9,8 +9,8 @@ import HoverTilt from "./components/tom/HoverTilt";
 function App() {
  return (
     <>
-      <main className="w-full min-h-screen bg-stone-500">
-        <HoverTilt/>
+      <main className="w-full h-screen ">
+        <NavHide/>
       </main>
     </>
   );
