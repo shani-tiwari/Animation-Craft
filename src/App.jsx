@@ -1,4 +1,4 @@
-import DragCard from "./components/tom/DragCard";
+import Sidebar from "./components/tom/Sidebar";
 
 
 
@@ -10,7 +10,7 @@ function App() {
  return (
     <>
       <main className="w-full h-screen ">
-        <DragCard/>
+        <Sidebar/>
       </main>
     </>
   );
