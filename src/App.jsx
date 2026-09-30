@@ -1,4 +1,4 @@
-import Sidebar from "./components/tom/Sidebar";
+import ShiftNav from "./components/tom/ShiftNav";
 
 
 
@@ -10,7 +10,7 @@ function App() {
  return (
     <>
       <main className="w-full h-screen ">
-        <Sidebar/>
+        <ShiftNav/>
       </main>
     </>
   );
