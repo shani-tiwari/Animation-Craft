@@ -1,4 +1,5 @@
-import ShiftNav from "./components/tom/ShiftNav";
+
+import { TypeWriter } from "./components/tom/TypeWriter";
 
 
 
@@ -10,7 +11,7 @@ function App() {
  return (
     <>
       <main className="w-full h-screen ">
-        <ShiftNav/>
+        <TypeWriter/>
       </main>
     </>
   );
