@@ -5,26 +5,26 @@
 
 
 .hoverText{
-    transition: 0.5s font-weight, 0.5s color;
+    transition: 0.7s font-weight, 0.5s color;
 }
 .hoverText:hover{
-    font-weight: 900;
+    font-weight: 700;
     color: rgb(248, 244, 244);
 }
 
 /*  to right */
 .hoverText:hover + .hoverText {
-    font-weight: 500;
-    color: rgb(182, 175, 175);
+    font-weight: 600;
+    color: rgb(223, 220, 220);
 }
 .hoverText:hover + .hoverText + .hoverText {
-    font-weight: 300;
+    font-weight: 500;
 }
 
 /* to left */
 .hoverText:has(+ .hoverText:hover){
-    font-weight: 500;
-    color: rgb(186, 177, 177);
+    font-weight: 400;
+    color: rgb(204, 199, 199);
 }
 .hoverText:has(+ .hoverText + .hoverText:hover){
     font-weight: 300;
