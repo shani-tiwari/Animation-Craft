@@ -1,5 +1,6 @@
+import Splash from "./components/codegrid/Splash";
+import Splash2 from "./components/codegrid/Splash2";
 
-import BubbleText from './components/tom/BubbleText'
 
 
 
@@ -7,17 +8,14 @@ import BubbleText from './components/tom/BubbleText'
 
 
 function App() {
- return (
+  return (
     <>
-      <main className="w-full h-screen bg-black flex items-center justify-center">
-        {/* <BubbleText /> */}
+      <main className="relative w-full h-screen bg-black/90 flex gap-4 items-center justify-center">
 
-        {/* <span className='text-7xl font-bold text-white' 
-          style={{ filter: "url(#material)"}}>
-            Mike Bespalov
-        </span> */}
+        <Splash/>
+        <Splash2/>
 
-        <svg  viewBox='0 0 350 130'>
+        {/* <svg  viewBox='0 0 350 130'>
           <defs>
 
             <linearGradient id='stripe' x2='486' spreadMethod='repeat'>
@@ -48,80 +46,11 @@ function App() {
                 <path d='M0 2.7h59.4c13.1 0 23.3 3.3'
                  filter='url(#material)' fill='url(#stripe)'/>
               </g>
-        </svg>
-
-      {/* claude */}
-          <svg viewBox="0 0 900 130" className="w-full max-w-4xl">
-            <defs>
-              <linearGradient
-                id="stripe"
-                gradientUnits="userSpaceOnUse"
-                x1="0" y1="0" x2="486" y2="0"
-                spreadMethod="repeat"
-              >
-                <stop offset="0" stopColor="#fff" />
-                <stop offset=".5" stopColor="#000" />
-                <stop offset="1" stopColor="#fff" />
-                <animateTransform
-                  attributeName="gradientTransform"
-                  type="translate"
-                  from="0 0"
-                  to="486 0"
-                  dur="4.4s"
-                  repeatCount="indefinite"
-                />
-              </linearGradient>
-
-              <filter id="material" x="-5%" y="-20%" width="110%" height="140%">
-                <feGaussianBlur in="SourceAlpha" stdDeviation="4.5" result="blur" />
-                <feComposite
-                  in="blur" in2="SourceAlpha"
-                  operator="arithmetic" k2="-1" k3="1"
-                  result="inner"
-                />
-                <feBlend in="SourceGraphic" in2="inner" mode="overlay" />
-              </filter>
-            </defs>
-
-            <text
-              x="0" y="95"
-              fontSize="90" fontWeight="700"
-              fill="url(#stripe)"
-              filter="url(#material)"
-            >
-              Mike Bespalov
-            </text>
-          </svg>
-
-      {/* glowing text */}
-        {/* <svg width="0" height="0" className="absolute">
-          <defs>
-            <filter id="material">
-              <feGaussianBlur
-                in="SourceGraphic"
-                stdDeviation="4.5"
-                result="blur"
-              />
-
-              <feComposite
-                in="SourceGraphic"
-                in2="blur"
-                operator="arithmetic"
-                k2="-1"
-                k3="0.5"
-                result="material"
-              />
-
-              <feBlend
-                in="SourceGraphic"
-                in2="material"
-                mode="overlay"
-              />
-            </filter>
-          </defs>
         </svg> */}
 
-      </main>
+
+     
+    </main>
     </>
   );
 }
