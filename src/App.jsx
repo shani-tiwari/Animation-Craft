@@ -1,4 +1,4 @@
-import ImgTrail from "./components/codegrid/ImgTrail";
+import ImageReveal from "./components/codegrid/ImageReveal";
 
 
 
@@ -7,10 +7,9 @@ import ImgTrail from "./components/codegrid/ImgTrail";
 function App() {
   return (
     <>
-      <main className="relative w-full h-screen bg-black/90 flex gap-4 items-center justify-center">
+      <main className="relative w-full h-fit bg-black/90 flex gap-4 items-center justify-center">
 
-        <ImgTrail />
-
+        <ImageReveal/>
         {/* <svg  viewBox='0 0 350 130'>
           <defs>
 
