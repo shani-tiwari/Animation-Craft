@@ -1,4 +1,4 @@
-import ImageReveal from "./components/codegrid/ImageReveal";
+import Img3dCircle from "./components/HankTheTank/Img3dCircle";
 
 
 
@@ -9,7 +9,7 @@ function App() {
     <>
       <main className="relative w-full h-fit bg-black/90 flex gap-4 items-center justify-center">
 
-        <ImageReveal/>
+        <Img3dCircle/>
         {/* <svg  viewBox='0 0 350 130'>
           <defs>
 
