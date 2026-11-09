@@ -28,6 +28,7 @@ function createCard(artist) {
   const cardCtx = card.getContext("2d");
   const photo = new Image();
 
+  // photo.onload runs async, so card is returned before its image finishes loading.
   photo.onload = () => {
     cardCtx.fillStyle = "#0b0b0b";
     cardCtx.fillRect(0, 0, card.width, card.height);
@@ -49,7 +50,7 @@ function createCard(artist) {
 }
 
 export default function Img3dCircle() {
-    
+
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -57,12 +58,12 @@ export default function Img3dCircle() {
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
+
     const ring = {
       angle: 0,
       speed: normalSpeed,
       tilt: -0.28,
-    };
-
+    }; 
     let cards = [];
     let disposed = false;
 
@@ -70,52 +71,79 @@ export default function Img3dCircle() {
       const dpr = window.devicePixelRatio || 1;
       canvas.width = window.innerWidth * dpr;
       canvas.height = window.innerHeight * dpr;
-    }
+    };
+    
+    /* calculates where a slice should appear on the ring and how big should it look?
+      Accepts: 
+      - angle: Current position around the circle.
+      - radius: Size of the ring.
 
+      - Math.cos(): Calculates depth.
+      - Math.sin(): Calculates horizontal position.
+      - scale: Makes front-facing parts look larger.
+      Returns:
+        - x → Horizontal position.
+        - y → Vertical position.
+        - scale → Size adjustment.
+    */
     function pointOnRing(angle, radius) {
-      const depth = Math.cos(angle);
-      const scale = 1 + depth * 0.25;
+      const depth = Math.cos(angle); // Depth tells, whether a slice is at the front or back of the ring.
+      // cos(0) → +1(front), cos(90) → 0(side), cos(180) → -1(back)
+      const scale = 1 + depth * 0.25; // depth is +1,card is in front of us - so it'll appear bigger 
 
       return {
-        x: Math.sin(angle) * radius * scale,
+        x: Math.sin(angle) * radius * scale, //determines horizontal position on the circle.
         y: depth * radius * 0.2,
         scale,
       };
-    }
+    };
 
+    /* draws all cards around the ring.
+        radius: Ring size.
+        slotAngle: Total angular space available for one card.
+        cardAngle: Actual card space after applying the gap.
+        sliceAngle: Angular space occupied by one slice.
+        cardHeight: Card height based on ring size.
+
+        */
     function drawRing(side) {
-      if (!cards.length) return;
-
-      const radius = Math.min(
-        canvas.width * 0.4,
-        canvas.height * 0.5
-      );
-
-      const slotAngle = (Math.PI * 2) / cards.length;
-      const cardAngle = slotAngle * (1 - gap);
-      const sliceAngle = cardAngle / slicesPerCard;
-      const cardHeight = radius * cardAngle * 1.33;
-
+         if (!cards.length) return; 
+         
+         const radius = Math.min(canvas.width * 0.4, canvas.height * 0.5); 
+         
+         const slotAngle = (Math.PI * 2) / cards.length;
+         const cardAngle = slotAngle * (1 - gap);
+         const sliceAngle = cardAngle / slicesPerCard;
+         const cardHeight = radius * cardAngle * 1.33;
+         
       cards.forEach((card, cardIndex) => {
-        const sliceWidth = card.width / slicesPerCard;
-
+           
+           // Each slice width = 1200 / 120 = 10px
+           // Each slice can be positioned independently, making the flat card appear curved in 3D space.
+           const sliceWidth = card.width / slicesPerCard;
+        /*
+          - Takes each card one by one.
+          - Calculates its slice width.  
+            Loop through slices → Processes its 120 slices individually.
+        */
         for (let slice = 0; slice < slicesPerCard; slice++) {
-          const angle =
-            ring.angle + cardIndex * slotAngle + slice * sliceAngle;
+
+          const angle = ring.angle + cardIndex * slotAngle + slice * sliceAngle;
 
           const start = pointOnRing(angle, radius);
           const end = pointOnRing(angle + sliceAngle, radius);
-          const height = cardHeight * start.scale;
+          const height = cardHeight * start.scale;  // Adjusts height according to depth.
           const top = start.y - height / 2;
 
           if (side === "front" && end.x > start.x) {
+            // Take one vertical slice from the original card and draw it at its calculated ring position
             ctx.drawImage(
               card,
               slice * sliceWidth,
               0,
               sliceWidth,
-              card.height,
-              start.x,
+              card.height, 
+              start.x, // Where to draw the slice horizontally
               top,
               end.x - start.x + 1,
               height
@@ -133,8 +161,22 @@ export default function Img3dCircle() {
           }
         }
       });
-    }
+    };
 
+
+    /**
+     * This function runs repeatedly.
+
+      Execution:
+        1. Updates ring angle to rotate it.
+        2. Clears the previous frame.
+        3. Saves canvas state.
+        4. Moves the drawing origin to the center.
+        5. Rotates the entire ring.
+        6. Draws back-facing slices.
+        7. Draws front-facing slices.
+        8. Restores canvas state.
+     */
     function render() {
       ring.angle += ring.speed * gsap.ticker.deltaRatio();
 
@@ -148,7 +190,7 @@ export default function Img3dCircle() {
       drawRing("front");
 
       ctx.restore();
-    }
+    };
 
     let observer;
     let speedTween;
@@ -159,19 +201,28 @@ export default function Img3dCircle() {
 
       if (disposed) return;
 
-      cards = artists.map(createCard);
+      cards = artists.map(createCard); // 
 
       window.addEventListener("resize", resize);
       resize();
 
       gsap.ticker.add(render);
 
+      /**
+       *  Animates ring speed from 0.12 to its original 0.01.
+          Creates the initial spin effect.
+       */
       speedTween = gsap.from(ring, {
         speed: 0.12,
         duration: 3,
         ease: "power3.out",
       });
 
+      /**
+       *  Slowly changes ring tilt.
+          Repeats forever.
+          yoyo reverses the animation.
+       */
       tiltTween = gsap.to(ring, {
         tilt: -0.12,
         duration: 4,
@@ -180,15 +231,21 @@ export default function Img3dCircle() {
         ease: "sine.inOut",
       });
 
+
+      /*
+        deltaX and deltaY → Measure interaction movement.
+        Calculates spin speed from user movement.
+        GSAP gradually returns the ring to normal speed.
+       */
       observer = Observer.create({
         target: canvas,
         type: "wheel,touch,pointer",
         preventDefault: true,
         onChange: (self) => {
+
           const spin = (self.deltaX + self.deltaY) * 0.002;
 
-          gsap.fromTo(
-            ring,
+          gsap.fromTo(ring,
             { speed: spin },
             {
               speed: normalSpeed,
@@ -196,6 +253,7 @@ export default function Img3dCircle() {
               overwrite: "auto",
             }
           );
+
         },
       });
     }
