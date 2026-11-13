@@ -1,4 +1,4 @@
-import PageFold from "./components/codegrid/PageFold";
+import WorksSlider from "./components/awwards/WorksSlider";
 
 
 
@@ -7,9 +7,9 @@ import PageFold from "./components/codegrid/PageFold";
 function App() {
   return (
     <>
-      <main className="relative w-full h-fit bg-black/90 flex gap-4 items-center justify-center">
+      <main className="relative w-full h-screen bg-black/90 flex gap-4 items-center justify-center">
 
-        <PageFold/>
+        <WorksSlider />
         {/* <svg  viewBox='0 0 350 130'>
           <defs>
 
