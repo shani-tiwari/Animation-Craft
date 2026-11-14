@@ -1,5 +1,4 @@
-import WorksSlider from "./components/awwards/WorksSlider";
-
+import MenuBtm from "./components/awwards/MenuBtm";
 
 
 
@@ -9,7 +8,7 @@ function App() {
     <>
       <main className="relative w-full h-screen bg-black/90 flex gap-4 items-center justify-center">
 
-        <WorksSlider />
+        <MenuBtm />
         {/* <svg  viewBox='0 0 350 130'>
           <defs>
 
