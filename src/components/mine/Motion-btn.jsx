@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 
 /**
- * @param name 
+ * bg appears with an animation of flipped, left to right
  */
 export default function MotionBtn({name = '@shani.develops'}) {
     

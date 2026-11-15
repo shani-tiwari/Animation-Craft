@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  background: #050505;
+  color: #fff;
+  font-family: system-ui, sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.card {
+  width: fit-content;
+  padding: 1.2rem 1.6rem;
+  border-radius: 12px;
+  background: #111;
+  border: 1px solid #333;
+  transition:
+    transform 0.25s ease-out,
+    background-color 0.25s ease-out,
+    box-shadow 0.25s ease-out;
+  will-change: transform, box-shadow;
+}
+
+.card-text {
+  display: inline-block;
+  font-size: 1.2rem;
+  color: #aaa;
+  transition: transform 0.25s ease-out, color 0.25s ease-out;
+  transform-origin: left center;
+}
+
+/* Hover effect: scale, bg change, soft shadow */
+.card:hover {
+  z-index: 999;
+  /* transform: scale(5);  this is overridden in js , so won't word */
+    padding: 1.4rem 4rem;
+  transform: scale(1.04);
+  background: #511d53;
+  box-shadow: 0 0 0 5px rgba(107, 46, 111, 2);
+}
+
+/* keep text effect if you use it */
+.card:hover .card-text {
+  transform: scale(1.05);
+  color: #cac7c7;
+}

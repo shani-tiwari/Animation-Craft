@@ -3,6 +3,8 @@ import { cn } from "../../lib/utils";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "motion/react";
 
+
+// menu items comes from the back of the button
 function MenuBar() {
   const [active, setActive] = useState(false);
 

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- canvas cursor trail, sparkles leaves behind with mouse move and spreads/disappear -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor trail</title>
+    <style>
+        html, body{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        canvas{
+            height: 100vh;
+            width: 100vw;
+            background: #edeaea;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div>
+        <canvas id="canvas"></canvas>
+    </div>
+     
+
+    <script>
+
+        const canvas = document.getElementById('canvas');
+        const ctx    = canvas.getContext("2d");
+
+        class Particle{
+
+            constructor(x,y){
+                this.x = x;
+                this.y = y;
+
+                this.radius =  (Math.random() * 6) + 2;
+                this.life   =  1;
+                this.decay  =  Math.random() * 0.02 + 0.01;
+                this.hue    =  Math.random() * 30 + 10;
+                this.vx     =  (Math.random() - 0.5) * 3.5;
+                this.vy     =  (Math.random() - 0.5) * 3.5;
+            };
+
+            update(){
+                this.life   -=  this.decay;
+                this.radius *=  0.95;   // value lesser than one
+                this.x      +=  this.vx;
+                this.y      +=  this.vy;
+            };
+
+            draw(ctx){
+                console.log('drawn');
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, Math.max(this.radius, 0), 0, Math.PI * 2 );
+
+                ctx.fillStyle   = `hsla(${this.hue}, 100%, 55%, ${this.life})`;
+                ctx.shadowColor = `hsla(${this.hue}, 100%, 5%, ${this.life})`;
+                // ctx.shadowBlur  = 12;
+
+
+                ctx.fill();
+            };
+
+        };
+
+        let particles = [];
+
+        function spawnAt(x, y){
+            for(let i = 0; i < 3; i++){
+                particles.push(new Particle(x, y));
+            };
+        };
+        
+        window.addEventListener('mousemove', e => spawnAt(e.clientX, e.clientY));
+        window.addEventListener('touchmove', e => {
+                const t = e.touches[0];
+                if(t) spawnAt(e.clientX, e.clientY)
+            }, 
+            {passive: true}
+        );
+
+
+        function Animate(){
+            console.log('animate');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for(let i = particles.length-1; i >= 0; i--){
+                const p = particles[i];
+                p.update()
+                p.draw(ctx);
+
+                if(p.life <= 0 || p.radius <= 0.2){
+                    particles.splice(i, 1);
+                };
+            };
+            requestAnimationFrame(Animate);
+        };
+        Animate();
+        // requestAnimationFrame(Animate);
+
+
+
+        function resize(){
+            canvas.width  = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }; 
+        resize();  // can't use IIFE as we wanna call it in listener too...
+        window.addEventListener('resize', resize);   
+    </script>
+</body>
+</html>

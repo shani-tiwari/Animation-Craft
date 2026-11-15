@@ -1,4 +1,4 @@
-import  PricingCard  from "./online/PricingCard";
+import ReviewSlider from "./components/mine/ReviewSlider";
 
 
 
@@ -7,7 +7,7 @@ function App() {
     <>
       <main className="relative w-full h-screen bg-black/90 flex gap-4 items-center justify-center">
 
-        <PricingCard  />
+        <ReviewSlider  />
         {/* <svg  viewBox='0 0 350 130'>
           <defs>
 

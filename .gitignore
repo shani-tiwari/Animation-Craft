@@ -23,22 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 desktop.ini
-.env
-.env.local
 README.md
-
-# components folder
-hcj-components
-3dBtn_bg.jsx
-AnimatedText.jsx
-Card.jsx
-CustomSVG.jsx
-# MenuBar.jsx
-Btn-Hover.jsx
-Nav_Hover.jsx
-Success_AniSeqBtn.jsx
-WavyUnderline.css
-WavyUnderline.jsx
-# Motion-btn.jsx
-Webtree-card.jsx
 
