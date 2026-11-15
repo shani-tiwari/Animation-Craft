@@ -1,3 +1,4 @@
+// follows the cursor in defined area
 
 import { cn } from "../../lib/utils"
 // eslint-disable-next-line no-unused-vars
@@ -5,7 +6,7 @@ import { motion } from "framer-motion";
 import { useRef, useState } from "react"
 
 
-export default function MagneticButton({children}) {
+export default function MagneticButton() {
     
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const ref = useRef(null);

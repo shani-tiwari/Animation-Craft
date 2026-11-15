@@ -9,7 +9,7 @@ import {
 } from "motion/react";
 
 
-export const DragClose = () => {
+export const DragToClose = () => {
   const [open, setOpen] = useState(false);
   return (
     <div className="grid h-screen place-content-center bg-neutral-950">

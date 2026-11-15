@@ -1,6 +1,7 @@
 import * as React from "react";
 import {cn} from '../lib/utils'
 
+// card border glows on hover of mouse position and follows it
 
 type SpotlightBorderProps = {
   children: React.ReactNode;

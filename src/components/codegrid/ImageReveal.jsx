@@ -1,3 +1,5 @@
+// image reveal animation with clipPath - divided into strips and overlapping 
+
 import {gsap} from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

@@ -1,3 +1,5 @@
+// mouse follower images, with an continous animation of scale in from left btm and scale out at top right
+
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 

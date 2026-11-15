@@ -2,15 +2,12 @@
 import {motion, useScroll, useMotionValueEvent} from 'motion/react';
 import { useState } from 'react';
 
-
-
-
+// Navbar appears/slides down when user starts scroll towards top, initially hides
 export default function NavHide(){
 
     const [hid, setHid] = useState(false);
     
     const {scrollY} = useScroll();
-
     useMotionValueEvent(scrollY, "change", (y)=>{
         const prev = scrollY.getPrevious();
         if (y>150 && prev < y) {

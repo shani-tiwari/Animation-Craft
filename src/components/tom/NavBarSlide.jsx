@@ -1,3 +1,5 @@
+// tabs slides inside the bar, on top of items, when hovered over 
+
 import { useRef, useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";

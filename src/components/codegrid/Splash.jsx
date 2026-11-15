@@ -1,3 +1,5 @@
+// items burst on hover like an celebration
+
 import { gsap } from "gsap";
 import { useRef } from "react";
 

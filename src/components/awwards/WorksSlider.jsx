@@ -1,3 +1,7 @@
+/**
+ * series of cards  - animate height from left 0 and completes at right -100%
+ */
+
 
 import { useRef } from "react";
 import gsap from "gsap";

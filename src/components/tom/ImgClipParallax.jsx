@@ -3,7 +3,7 @@ import { motion, useMotionTemplate, useScroll, useTransform } from "motion/react
 import { useRef } from "react";
 
 
-
+// image stays and perform an clip path animation, while other images scrolls
 export default function TomImgClipParallax(){
     
     return (

@@ -1,3 +1,5 @@
+// text appears with scroll in a smooth curv line effect
+
 // eslint-disable-next-line no-unused-vars
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";

@@ -1,3 +1,9 @@
+/**
+ * menu botton - open & close animation 
+ * Nav items are boxes when closed and animates their width, height when opened
+ * website - zzdp.nl 
+ */
+
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -5,9 +11,6 @@ import { CustomEase } from "gsap/CustomEase";
 
 gsap.registerPlugin(useGSAP, CustomEase);
 
-/* ------------------------------------------------------------------ */
-/* Reusable variables - tweak everything from here                     */
-/* ------------------------------------------------------------------ */
 
 // Layout
 const MENU_W = "14rem"; // menu width (same as Tailwind w-56). Closed cards fit inside this width

@@ -1,3 +1,5 @@
+// change slide direction and text tilts like it speeds up and scroll with speed
+
 import {
   // eslint-disable-next-line no-unused-vars
   motion,

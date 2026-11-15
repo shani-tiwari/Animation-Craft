@@ -1,4 +1,4 @@
-
+// 3d images slider/gallery circular rotating
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Observer from "gsap/Observer";

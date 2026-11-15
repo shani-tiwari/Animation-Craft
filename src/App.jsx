@@ -1,5 +1,4 @@
-import MenuBtm from "./components/awwards/MenuBtm";
-
+import  PricingCard  from "./online/PricingCard";
 
 
 
@@ -8,7 +7,7 @@ function App() {
     <>
       <main className="relative w-full h-screen bg-black/90 flex gap-4 items-center justify-center">
 
-        <MenuBtm />
+        <PricingCard  />
         {/* <svg  viewBox='0 0 350 130'>
           <defs>
 

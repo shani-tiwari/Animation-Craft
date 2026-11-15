@@ -1,3 +1,5 @@
+// text change their font weight, the one who hovered and it's siblings
+
 
 import "./tom.css";
 

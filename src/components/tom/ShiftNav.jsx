@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 
 
 
-
+// an dropdown menu tab/div appears and stays static
+// content inside it changes as different Nav-items hovered 
 export default function ShiftNav(){
     return (
         <div className="flex h-full w-full justify-start bg-neutral-950 p-8 text-neutral-200">

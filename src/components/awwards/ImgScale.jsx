@@ -1,3 +1,8 @@
+/**
+ * image/slides - sideways scale in/out effect
+ * appears from right, scales at full in center, scale out to left
+ */
+
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -6,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const COLORS = ["bg-red-500", "bg-green-500", "bg-blue-500"];
 
-export default function Projects() {
+export default function ImgScale() {
   const containerRef = useRef(null);
 
   useLayoutEffect(() => {

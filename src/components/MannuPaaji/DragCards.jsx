@@ -1,3 +1,5 @@
+// drag cards in sides to move them back/end in series
+
 /* eslint-disable no-unused-vars */
 
 import {motion, useMotionValue, useTransform, animate} from 'motion/react';

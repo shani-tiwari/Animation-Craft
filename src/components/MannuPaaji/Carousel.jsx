@@ -1,4 +1,4 @@
-
+// images appears on full screen when tap with fade bg
 
 // eslint-disable-next-line no-unused-vars
 import {AnimatePresence, motion} from 'motion/react'

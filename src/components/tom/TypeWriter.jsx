@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 
+
+// multiple examples sentences appears in a loop with an typed effect
 export const TypeWriter = () => {
   return (
     <div className="flex items-center justify-center bg-neutral-100 px-8 py-24 text-neutral-800">

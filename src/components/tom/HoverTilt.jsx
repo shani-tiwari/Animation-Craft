@@ -1,3 +1,5 @@
+// inner card follows cursor / outer cards presses/tilts
+
 // eslint-disable-next-line no-unused-vars
 import { useMotionValue, useSpring, useTransform, motion } from "motion/react";
 
