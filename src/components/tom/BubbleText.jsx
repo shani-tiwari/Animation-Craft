@@ -1,12 +1,13 @@
 // text change their font weight, the one who hovered and it's siblings
 
+// try - yt codeGrid , text got self concious about its font weight 
 
 import "./tom.css";
 
 export default function BubbleText(){
     return (
         <div 
-        className="relative"
+        className="relative" 
         >
             <h1 className="text-5xl font-extralight text-white/40 ">
                {"Shaniiiiiii Tiwari".split('').map((char,i)=>{

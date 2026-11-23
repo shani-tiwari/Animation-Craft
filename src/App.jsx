@@ -1,13 +1,13 @@
-import ReviewSlider from "./components/mine/ReviewSlider";
+import StickerTrail from "./components/codegrid/StickerTrail";
 
 
 
 function App() {
   return (
     <>
-      <main className="relative w-full h-screen bg-black/90 flex gap-4 items-center justify-center">
+      <main className="relative w-screen h-fit bg-black flex gap-4 items-center justify-center overflow-hidden">
 
-        <ReviewSlider  />
+        <StickerTrail  />
         {/* <svg  viewBox='0 0 350 130'>
           <defs>
 
