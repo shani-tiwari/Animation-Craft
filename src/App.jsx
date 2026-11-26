@@ -1,13 +1,13 @@
-import StickerTrail from "./components/codegrid/StickerTrail";
+import LensSlider from "./components/codegrid/LensSlider";
 
 
 
 function App() {
   return (
     <>
-      <main className="relative w-screen h-fit bg-black flex gap-4 items-center justify-center overflow-hidden">
+      <main className="relative w-full h-fit bg-black flex gap-4 items-center justify-center overflow-hidden">
 
-        <StickerTrail  />
+        <LensSlider  />
         {/* <svg  viewBox='0 0 350 130'>
           <defs>
 
