@@ -1,4 +1,4 @@
-import RippleLine from "./components/awwards/SvgWaveLine";
+import QuadrantMenu from "./components/mine/MenuClick";
 
 
 
@@ -7,7 +7,7 @@ function App() {
     <>
       <main className="relative w-full h-screen bg-black flex gap-4 items-center justify-center overflow-hidden">
 
-        <RippleLine config={{ spawnAt: 0.5, duration: 4 }} />
+        <QuadrantMenu />
         {/* <svg  viewBox='0 0 350 130'>
           <defs>
 
