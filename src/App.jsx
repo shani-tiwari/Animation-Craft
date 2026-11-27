@@ -1,13 +1,13 @@
-import LensSlider from "./components/codegrid/LensSlider";
+import RippleLine from "./components/awwards/SvgWaveLine";
 
 
 
 function App() {
   return (
     <>
-      <main className="relative w-full h-fit bg-black flex gap-4 items-center justify-center overflow-hidden">
+      <main className="relative w-full h-screen bg-black flex gap-4 items-center justify-center overflow-hidden">
 
-        <LensSlider  />
+        <RippleLine config={{ spawnAt: 0.5, duration: 4 }} />
         {/* <svg  viewBox='0 0 350 130'>
           <defs>
 
